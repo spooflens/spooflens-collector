@@ -1,0 +1,10 @@
+{
+  "name": "spooflens-collector",
+  "version": "0.3.0",
+  "description": "Collects what a browser reports about itself for fingerprint consistency checks. No network, no storage, CSP-friendly.",
+  "main": "collector.js",
+  "files": ["collector.js", "collector-worker.js", "README.md", "LICENSE"],
+  "keywords": ["browser-fingerprint", "fingerprinting", "bot-detection", "anti-fraud", "webrtc", "canvas"],
+  "homepage": "https://spooflens.com/en/browser",
+  "license": "MIT"
+}

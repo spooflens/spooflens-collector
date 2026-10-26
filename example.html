@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>spooflens-collector example</title>
+<style>
+  body { font: 15px/1.5 system-ui, sans-serif; margin: 24px; background: #fff; color: #111; }
+  pre { background: #f4f4f4; padding: 12px; overflow: auto; max-height: 70vh; }
+</style>
+</head>
+<body>
+<h1>spooflens-collector</h1>
+<p>Fingerprint ID: <strong id="fp">collecting…</strong></p>
+<pre id="out"></pre>
+<!-- serve this folder over http(s): a Web Worker cannot start from file:// -->
+<script src="collector.js"></script>
+<script>
+  SpoofLensCollector.collect({ worker: 'collector-worker.js' }).then(function (s) {
+    document.getElementById('fp').textContent = s.fp;
+    document.getElementById('out').textContent = JSON.stringify(s, null, 2);
+  });
+</script>
+</body>
+</html>
